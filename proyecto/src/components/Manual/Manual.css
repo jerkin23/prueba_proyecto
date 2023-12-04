@@ -36,10 +36,10 @@
 }
 
 .burbujas span:nth-child(even) {
-    background: #008b8b;
-    box-shadow: 0 0 0 10px #144854,
-    0 0 50px ,#008b8b
-    0 0 100px #008b8b;
+    background: #7EECFF;
+    box-shadow: 0 0 0 10px #66BF,
+    0 0 50px ,#7EECFF
+    0 0 100px #7EECFF;
 }
 
 @keyframes animate {
@@ -49,4 +49,11 @@
     100%{
         transform: translateY(-10vh) scale(1);
     }
+}
+
+.fondo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
