@@ -2,10 +2,33 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import './Manual.css';
 
-const LetrasManual = () => {
+const Manual = () => {
+  //definir estado de burbujas para inicializar todo desde el inicio
+  const [bubbles, setBubbles] = useState([]);
+
+  useEffect(() => {
+    //aca se generan las burbujas
+    const generateBubbles = () => {
+      //este es el numero de burbujas que aparecen a lo largo de la pantalla
+      const numBubbles = 40;
+      //aca es un arreglo para que sea random la generacion de burbujas
+      const bubbleValues = Array.from({ length: numBubbles }, () =>
+        Math.floor(Math.random() * 31) + 11
+      );
+      //aca se actualiza su estado pues
+      setBubbles(bubbleValues);
+    };
+
+    //aca se llama a la llama que llama
+    generateBubbles();
+  }, []);
 
   return (
-    <div className="letras">
+    
+    <div className="Manual" data-testid="Manual">
+      <div className="capa">
+        
+        <div className="letras">
       <h1>Manual de usuario - Bloc de Notas en línea</h1>
   <p>¡Bienvenido a nuestro Bloc de Notas en Línea! Esta es la herramienta perfecta para organizar tus ideas en cualquier momento y lugar. Este recurso nace con la idea de ofrecerte una plataforma sencilla y eficiente para gestionar tus diferentes apuntes de manera práctica y eficiente.</p>
   
@@ -50,36 +73,9 @@ const LetrasManual = () => {
   <p>Explora los servicios que te ofrecemos en nuestro Bloc de Notas en Línea y mantente organizado.</p>
   <p>¡Gracias por ser parte de nuestro proyecto y esperamos tener tu apoyo!</p>
     </div>
-  );
-}
-
-const Manual = () => {
-  //definir estado de burbujas para inicializar todo desde el inicio
-  const [bubbles, setBubbles] = useState([]);
-
-  useEffect(() => {
-    //aca se generan las burbujas
-    const generateBubbles = () => {
-      //este es el numero de burbujas que aparecen a lo largo de la pantalla
-      const numBubbles = 40;
-      //aca es un arreglo para que sea random la generacion de burbujas
-      const bubbleValues = Array.from({ length: numBubbles }, () =>
-        Math.floor(Math.random() * 31) + 11
-      );
-      //aca se actualiza su estado pues
-      setBubbles(bubbleValues);
-    };
-
-    //aca se llama a la llama que llama
-    generateBubbles();
-  }, []);
-
-  return (
-    <div className="Manual" data-testid="Manual">
-      <div className="capa">
-        <div className="burbujas">
+      </div>
+      <div className="burbujas">
           {bubbles.map((value, index) => (
-            //aca la historia se cuenta sola con ese map terrorifico xd
             <span
               className="burbuja"
               style={{ '--i': value, animationDelay: `${index * 0.1}s` }}
@@ -87,10 +83,10 @@ const Manual = () => {
             ></span>
           ))}
         </div>
-      </div>
     </div>
   );
 };
+
 
 Manual.propTypes = {};
 Manual.defaultProps = {};
