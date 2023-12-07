@@ -8,7 +8,7 @@
 
 .Manual{
     min-height: 100vh;
-    height: 100%;
+    height: 1600px;
     color: white;
     background-color: #0c192c;  
 }
@@ -16,19 +16,22 @@
 .capa{
     position: relative;
     width: 100%;
-    min-height: 120vh;
+    height: 100%;
+    min-height: 170vh;
     max-height: 100%;
     overflow: hidden;
-    
     padding: 40px;
     background-color: transparent;
+    
 }
 
 .burbujas {
-    position: relative;
+    position: absolute;
     z-index: 0;
     display: flex;
-    
+    opacity: 0;
+    animation: showBubbles 40s forwards;
+    bottom: -100%;
 }
 
 .burbujas span {
@@ -43,6 +46,8 @@
     0 0 100px #4fc3dc;
     animation: animate 15s linear infinite;
     animation-duration: calc(125s / var(--i));
+    animation-delay: calc(var(--i) * 0.1s + 4s);
+
 }
 
 .burbujas span:nth-child(even) {
@@ -61,16 +66,42 @@
     }
 }
 
+@keyframes showBubbles {
+    0% {
+        opacity: 0; /* Initially set opacity to 0 */
+    }
+    100% {
+        opacity: 1; /* Make it visible */
+    }
+}
+
 
 .letras{
     position: absolute;
     z-index: 1;
     padding: 40px;
-    border: solid 5px white;
-    border-radius: 5px;
+    border: solid 2px white;
+    border-radius: 15px;
     margin-left: 20px;
     margin-right: 50px;
     max-height: none;
     background-color: transparent;
 }
 
+h1{
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    margin: 2rem;
+}
+
+h2{
+    margin: 1rem;
+}
+
+h3{
+    margin: 1rem;
+}
+
+p{
+    margin: 1rem;
+}
