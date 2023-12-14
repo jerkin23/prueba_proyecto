@@ -5,7 +5,6 @@ import './Manual.css';
 const Manual = () => {
   //definir estado de burbujas para inicializar todo desde el inicio
   const [bubbles, setBubbles] = useState([]);
-  const [burbujasVisible, setBurbujasVisible] = useState(false);
 
   useEffect(() => {
     //aca se generan las burbujas
@@ -19,9 +18,7 @@ const Manual = () => {
       //aca se actualiza su estado pues
       setBubbles(bubbleValues);
 
-            setTimeout(() => {
-              setBurbujasVisible(true);
-            }, 7000); // 4000 milliseconds = 4 seconds
+      
     };
 
     //aca se llama a la llama que llama

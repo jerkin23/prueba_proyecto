@@ -1,5 +1,6 @@
 import Manual from "./components/Manual/Manual";
 
+
 function App() {
   return (
     <div className="App">

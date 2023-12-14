@@ -68,10 +68,10 @@
 
 @keyframes showBubbles {
     0% {
-        opacity: 0; /* Initially set opacity to 0 */
+        opacity: 0;
     }
     100% {
-        opacity: 1; /* Make it visible */
+        opacity: 1; 
     }
 }
 
@@ -96,12 +96,19 @@ h1{
 
 h2{
     margin: 1rem;
+    text-align: center;
 }
 
 h3{
     margin: 1rem;
+    text-align: center;
 }
 
 p{
     margin: 1rem;
+    text-align: center;
+}
+
+ol{
+    text-align: center;
 }
